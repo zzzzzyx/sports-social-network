@@ -5,7 +5,9 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 h4, h5, h6,
-h1, h2, h3 {margin-top: 0;}
+h1, h2, h3 {
+	margin-top: 0;
+}
 ul, ol {margin: 0;}
 p {margin: 0;}
 html, body{
@@ -1078,7 +1080,7 @@ ul.p_n-list li a:hover{
 	padding: 3em 0px;
 }
 .event-top {
-	margin-bottom: 1em;
+	margin-bottom: 4em;
 }
 .event-top p {
 	font-size: 14px;
@@ -1094,12 +1096,25 @@ ul.p_n-list li a:hover{
 }
 .e-right {
 	padding: 0px;
+	
 }
-.e-right h3 {
+.e-right p {
+	padding: 0px;
+}
+.rder {
 	font-size: 1.5em;
 	font-weight: 400;
 	color: #9b242d;
-	margin: 1em 0px;
+	float:right;
+	margin: 0.2em 20px;
+	margin-top: 20px
+}
+
+.e-right h4 {
+	font-size: 1.5em;
+	font-weight: 400;
+	color: #9b242d;
+	margin: 0.5em 0px;
 }
 .event-icon span {
 	background: url(../images/sprit.png)no-repeat;
