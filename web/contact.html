@@ -6,6 +6,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 <!DOCTYPE html>
 <html>
 <head>
+
+
+
+
+
 <title>My Charity A Charity  category Flat bootstrap Responsive  Website Template| Contact :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -43,13 +48,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 			<div class="clear"> </div>
 			<div class="navg">
 				<ul class="res">
-					<li><a href="index.html">HOME</a></li>
-					<li><a href="about.html">ABOUT US</a></li>
-					<li><a href="projects.html">PROJECTS</a></li>
-					<li><a href="blog.html">BLOG</a></li>
-					<li><a href="events.html">EVENTS</a></li>
-					<li><a href="gallery.html">GALLERY</a></li>
-					<li><a  class="active" href="contact.html">CONTACT US</a></li>
+					<li><a href="index.html">主页</a></li>
+					<li><a href="events.html">活动</a></li>
+					<li><a href="blog.html">健身与动态</a></li>
+					<li><a href="projects.html">好友</a></li>
+					<li><a href="gallery.html">个人</a></li>
+					<li><a  class="active" href="contact.html">意见反馈</a></li>
 				</ul>
 				 <script>
 			                                                      $( "span.menu").click(function() {
@@ -68,8 +72,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 <div class="contact">
 	<div class="container">
 		<div class="contact-main">
-			<h3>CONTACT US</h3>
-			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+			<h3>联系我们</h3>
 		</div>
 	</div>
 </div>
@@ -78,35 +81,127 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 <div class="get">
 	<div class="container">
 		<div class="get-main">
-			  <h3>Get in Touch</h3>
+			  <h3>我们会尽快给您回复</h3>
 			  <div class="col-md-6 get-left">
-			  	 <p>Name</p>
+			  	 <p>称呼</p>
 			  	 <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
-			  	 <p>Email</p>
+			  	 <p>电子游戏地址</p>
 			  	 <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
-			  	 <p>Telephone</p>
+			  	 <p>手机号码</p>
 			  	 <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
-			  	 <p>Website</p>
+			  	 <p>社交联系方式（如微信号）</p>
 			  	 <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
-			  	 <input type="submit" value="Send">
+			  	 <input type="submit" value="发送">
 			  </div>
 			  <div class="col-md-6 get-right">
-			  	<h4>Message</h4>
+			  	<h4>意见</h4>
 			  	<textarea   onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/> </textarea>
-			  	<h3>Contact us</h3>
-					<p>Address : Richard McClintock</p>
-					<p>New Street : Letraset sheets</p>
-					<p>ph : 0000-0000-000</p>	
+			  	<h3>联系我们</h3>
+					<p>地址 : 南京大学鼓楼校区</p>
+					<p>电邮 : zzzzzyx@outlook.com</p>
 		 	  </div>
 		 	<div class="clearfix"> </div>	
 		</div>
 	</div>
 </div>
-<div class="map">
-	<div class="container">
-		 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387144.007583421!2d-73.97800349999999!3d40.7056308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1415253431785"  frameborder="0" style="border:0"></iframe>
-	</div>
 </div>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(118.787583,32.060162);//定义一个中心点坐标
+        map.centerAndZoom(point,16);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"拜运动团队",content:"我的备注",point:"118.787421|32.059734",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
 <!--get touch end here-->
 <!--footer start here-->
 <div class="footer">
@@ -114,18 +209,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 		<div class="footer-main">
 			<div class="footer-navg">
 				<ul>
-					<li><a href="index.html">HOME</a></li>
-					<li><a href="about.html">ABOUT US</a></li>
-					<li><a href="projects.html">PROJECTS</a></li>
-					<li><a href="blog.html">BLOG</a></li>
-					<li><a href="events.html">EVENTS</a></li>
-					<li><a href="gallery.html">GALLERY</a></li>
-					<li><a class="active" href="contact.html">CONTACT US</a></li>
+					<li><a href="index.html">主页</a></li>
+					<li><a href="events.html">活动</a></li>
+					<li><a href="blog.html">健身与动态</a></li>
+					<li><a href="projects.html">好友</a></li>
+					<li><a href="gallery.html">个人</a></li>
+					<li><a  class="active" href="contact.html">意见反馈</a></li>
 				</ul>
 			</div>
 			<div class="footer-top">
 				<div class="col-md-4 footer-left">
-					<h3>FOLLOW US</h3>
+					<h3>在社交网站上关注拜运动团队</h3>
 				<ul>
 					<li><a href="#"><span class="a"> </span></a></li>
 					<li><a href="#"><span class="b"> </span></a></li>
@@ -133,15 +227,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 				</ul>
 				</div>
 				<div class="col-md-4 footer-middle">
-					<h3>NEWS LETTER</h3>
-					<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}"/>
-					<input type="submit" value="Subscribe">
+					<h3>邮件订阅</h3>
+					<input type="text" value="输入邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '输入邮箱';}"/>
+					<input type="submit" value="订阅">
 				</div>
 				<div class="col-md-4 footer-right">
-					<h3>Contact us</h3>
-					<p>Address : Richard McClintock</p>
-					<p>New Street : Letraset sheets</p>
-					<p>ph : 5240-2948-600</p>
+					<h3>联系我们</h3>
+					<p>地址 : 南京大学鼓楼校区</p>
+					<p>电邮 : zzzzzyx@outlook.com</p>
 				</div>
 			<div class="clearfix"> </div>
 			</div>
