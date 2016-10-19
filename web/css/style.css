@@ -154,7 +154,6 @@ span.menu {
 	min-height:320px;
 	text-align: center;
 	padding: 5.5em 0px;
-	cursor: pointer;
 }
 .below-side h1{
 	color: #F9F900;
@@ -725,6 +724,105 @@ span.m {
     -o-transition: all 0.3s ease;
 }
 /*project style end here--*/
+.list-top{
+	margin: 0px 0px;
+	background: #36F;
+	height:100px;
+}
+.list-top h3{
+	text-align:center;
+	color: #FFF;
+	line-height:90px;
+}
+.chat-top{
+	text-align:center;
+	height:100px;
+	background: #3FC;
+}
+.chat-top p{
+	line-height:90px;
+}
+.list{
+	background: #FF0;
+	min-height:600px;
+}
+.list .user{
+	padding-top = 10px;
+	height:50px;
+	line-height:50px;
+	border-bottom:1px solid #ccc;
+}
+.list .user img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-left: 65px;
+    margin-right: 6px;
+}
+.list a{
+	color: #000;
+}
+.chatbar{
+	min-height:450px;
+	background:#eee
+}
+
+.mod-chatpanel-customer.mod-chatpanel-item {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-direction: reverse;
+    box-direction: reverse;
+}
+.mod-chatpanel-item {
+    position: relative;
+    margin-top: 10px;
+}
+.mod-chatpanel-customer.mod-chatpanel-item .chat {
+    padding-right: 7px;
+}
+.mod-chatpanel-item .chat {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-left: 7px;
+}
+.mod-chatpanel-customer.mod-chatpanel-item .chat .body {
+    float: right;
+    position: relative;
+    margin-top: 0;
+    margin-left: 20%;
+    margin-right: 0;
+    color: #fff;
+    background-color: #34BBF9;
+    border-radius: 4px;
+    border: 1px solid #34BBF9;
+    box-shadow: none;
+}
+.mod-chatpanel-item .chat .body {
+    float: left;
+    position: relative;
+    margin-right: 20%;
+    padding: 12px 18px 10px;
+    line-height: 1.3;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #DDD;
+    animation: fadeInUp .4s 0s ease;
+    -webkit-animation: fadeInUp .4s 0s ease;
+	max-width:300px;
+}
+
+.mod-chatpanel-item .chat .body .content {
+    word-break: break-all;
+    line-height: 20px;
+}
+
+.form-control{
+	max-width:60%;
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
 /*--blog style start here--*/
 .blog {
 	padding: 3em 0px;
