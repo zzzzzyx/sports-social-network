@@ -266,15 +266,14 @@ form {
 	margin-top: 18.7em;
 	text-align: center;
 	height: 311px;
-    cursor:pointer;
-}
+}/*--
 .bg:hover{
 	background:#5679C1;
 	transition: 0.5s all;
  -webkit-transition: 0.5s all;
  -moz-transition:  0.5s all;
  -o-transition:  0.5s all;
-}
+}--*/
 /*--below end start here--*/
 /*--news start here--*/
 .news {
@@ -726,25 +725,26 @@ span.m {
 /*project style end here--*/
 .list-top{
 	margin: 0px 0px;
-	background: #36F;
+	background: #CCC;
 	height:100px;
 }
 .list-top h3{
 	text-align:center;
-	color: #FFF;
+	color: #000;
 	line-height:90px;
 }
 .chat-top{
 	text-align:center;
 	height:100px;
-	background: #3FC;
+	background: #DDD;
 }
 .chat-top p{
 	line-height:90px;
+	color:#000;
 }
 .list{
-	background: #FF0;
-	min-height:600px;
+	background: #DDD;
+	min-height:750px;
 }
 .list .user{
 	padding-top = 10px;
@@ -763,8 +763,8 @@ span.m {
 	color: #000;
 }
 .chatbar{
-	min-height:450px;
-	background:#eee
+	min-height: 600px;
+	background: #eee
 }
 
 .mod-chatpanel-customer.mod-chatpanel-item {
@@ -817,10 +817,22 @@ span.m {
     word-break: break-all;
     line-height: 20px;
 }
-
+.inputArea{
+	border: 1px solid #ccc;
+	padding: 6px 12px;
+	resize: none;
+}
+.submitBtn{
+	margin-top:0px;
+	height:146px;
+	width:8.3%;
+	border-radius: 0px;
+	border-left:none;
+}
 .form-control{
-	max-width:60%;
+	width:60%;
 	margin-bottom:0px;
+		margin-right:0px;
 	padding-bottom:0px;
 }
 /*--blog style start here--*/
@@ -939,6 +951,19 @@ ul.blog-list li a:hover{
 	font-weight: 400;
 	color: #9b242d;
 	margin: 2em 0px;
+}
+.recordBtn{
+	margin: 25px 0;
+	width:100%;
+	padding-top: 1em;
+		padding-bottom: 1em;
+	border-radius: 0px;
+}
+.subscribe{
+	margin-top:100px;
+}
+.btrnnnn{
+	padding: 0 0 0 0;
 }
 ul.blog-rig-list {
 	list-style: none;
@@ -1132,7 +1157,35 @@ ul.p_n-list li a:hover{
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
 }
+ul.p_n-list .neg{
+	padding: 10px 1em;
+	color:#fff;
+	background:#373838;
+	text-decoration:none;
+	transition: all 0.3s ease; 
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
 /*--blog style end here--*/
+.kindofsport{
+	margin-top:60px;
+}
+.halfInput{
+	padding-right:0;
+}
+.hourhh{
+	color:#000;
+	margin-top:8px;
+	padding-left:0.5em;
+}
+.halfInput input{
+	text-align:right;
+}
+.aaa{
+	width:20%;
+	margin-right:0px;
+} 
 /*--single page start here--*/
 .blog-para p{
 	font-size: 15px;
@@ -1218,7 +1271,7 @@ ul.p_n-list li a:hover{
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1.8em;
-	margin: 10px 0px 0px 0px;
+	margin: 10px 40px 0px 0px;
 }
 .e-left h4 {
 	font-size: 1.5em;
@@ -1241,7 +1294,9 @@ ul.p_n-list li a:hover{
 	margin: 0.2em 20px;
 	margin-top: 20px
 }
-
+.eventpn{
+	padding-bottom:70px;
+}
 .e-right h4 {
 	font-size: 1.5em;
 	font-weight: 400;
@@ -1527,6 +1582,16 @@ span.u:hover{
 	resize: none;
 	padding: 10px;
 }
+.get-left textarea {
+	width: 95%;
+	height: 12em;
+	outline: none;
+	resize: none;
+	padding: 10px;
+}
+.get-left img{
+	max-width:95%;
+}
 .get-left p {
 	font-size: 15px;
 	font-weight: 400;
@@ -1565,7 +1630,33 @@ span.u:hover{
 	background-size: 35px;
 	background: url(../images/scroll.png) no-repeat 0px 0px;
 }
-/*--contact end here
+.edit-right h3{
+	font-size:1.7em;
+	min-width:100px;
+}
+.edit-main{
+	padding-left:200px;
+}
+.sbBtn{
+}
+/*--contact end here*/
+.hh{
+	margin-top:1em;
+	width:5em;
+	margin-right:1em;
+	position:relative;
+	float:left;
+	text-align:right;
+}
+.ss{
+		margin-top:1em;
+	margin-left:6em;
+	position:relative;
+	text-align:left;
+}
+.bbg{
+	margin: 20px 0px 0px 16px;
+}
  /*--media quiries start here--*/
 @media(max-width:1280px){
 	
@@ -1781,6 +1872,7 @@ ul.res li a:hover,ul.res li a.active{
 .get-left {
 	padding: 1em 0px;
 }
+
 .blog-right {
 	padding: 1.5em 0px 0px 1em;
 }
@@ -1921,6 +2013,7 @@ ul.popular-tag li a {
 }
 .e-left {
 	text-align: center;
+	padding-right:50px;
 }
 .e-left img {
 	width: 60%;
@@ -2590,9 +2683,7 @@ input[type="text"] {
 .event-head h3 {
 	font-size: 1.2em;
 }
-.e-left {
-	padding: 0px;
-}
+
 .e-right h3 {
 	font-size: 1em;
 }
