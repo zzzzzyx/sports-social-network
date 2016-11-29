@@ -48,7 +48,7 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => database_path('database.sqlite'),
+            'database' => 'C:\Users\st0001\Desktop\sports-social-network\sports-social-network\sports-app\database\production.sqlite',
             'prefix'   => '',
         ],
 
