@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'MainPageController@index');
+//Route::get('/', 'MainPageController@index');
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +31,11 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'MainPageController@index');
+    Route::get('/activity', 'ActivityController@index');
+    Route::get('/account', 'AccountController@index');
+    Route::post('/account', 'AccountController@editAccount');
+    Route::get('/exercise', 'ExerciseController@index');
+    Route::get('/person', 'PersonController@index');
+    Route::get('/friend', 'FriendController@index');
 });

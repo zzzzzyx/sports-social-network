@@ -26,6 +26,10 @@ html, body{
 .navg{
 	float:right;
 }
+
+.navg ul{
+	float:right;
+}
 .navg ul{
 	list-style:none;
 	padding:0px;
@@ -53,6 +57,19 @@ html, body{
 }
 span.menu {
 	display: none;
+}
+#logout{
+	color: #fff;
+	text-decoration: none;
+	background: #aaadb3;
+	padding: 10px 12px;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition:  0.5s all;
+	-o-transition:  0.5s all;
+}
+#logout:hover{
+	background: #63666b;
 }
 /*--header end here--*/
 /*--banner style start here--*/

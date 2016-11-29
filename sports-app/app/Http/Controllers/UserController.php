@@ -8,8 +8,5 @@ use App\Http\Requests;
 
 class UserController extends Controller
 {
-    protect
-    public function getRegister(){
-
-    }
+    //
 }
