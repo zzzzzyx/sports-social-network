@@ -32,10 +32,18 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'MainPageController@index');
-    Route::get('/activity', 'ActivityController@index');
+    Route::get('/activity/add', 'ActivityController@addActivity');
+    Route::post('/activity/add', 'ActivityController@addActivityPost');
+    Route::get('/activity/list/{id}', 'ActivityController@index');
+    Route::get('/activity/{id}/attend', 'ActivityController@attend');
+    Route::get('/activity/{id}/delete', 'ActivityController@delete');
+    Route::get('/activity/{id}/leave', 'ActivityController@leave');
+    Route::get('/activity/{id}', 'ActivityController@get');
     Route::get('/account', 'AccountController@index');
     Route::post('/account', 'AccountController@editAccount');
     Route::get('/exercise', 'ExerciseController@index');
     Route::get('/person', 'PersonController@index');
+    Route::get('/friend/chatwith/{id}', 'FriendController@chatwith');
+    Route::post('/friend/chatwith/{id}', 'FriendController@postChat');
     Route::get('/friend', 'FriendController@index');
 });

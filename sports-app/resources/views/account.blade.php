@@ -20,15 +20,13 @@
 			  <div class="col-md-6 get-left">
 
 			  	 <p>姓名</p>
-			  	 <input type="text" value="{{$name}}"/>
-			  	 <p>电子邮件地址</p>
-			  	 <input type="text" value="{{$email}}"/>
+			  	 <input type="text" value="{{$name}}" name="name"/>
 			  	 <p>手机号码</p>
-			  	 <input type="text" value="{{$phone}}"/>
+			  	 <input type="text" value="{{$phone}}" name="phone"/>
 			  	 <p>QQ号</p>
-			  	 <input type="text" value="{{$qq}}"/>
+			  	 <input type="text" value="{{$qq}}" name="qq"/>
                  <p>个性签名</p>
-			  	<textarea  />{{$signature}}</textarea>
+			  	<textarea name="signature" />{{$signature}}</textarea>
 			  	 <input class="sbBtn" type="submit" value="保存">
 			  </div></form>
 			  <div class="col-md-6 edit-right">

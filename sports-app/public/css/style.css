@@ -72,6 +72,16 @@ span.menu {
 	background: #63666b;
 }
 /*--header end here--*/
+.success-main h3{
+	padding-top:200px;
+	padding-bottom:100px;
+}
+.return{
+	text-align: center;
+	padding-bottom:150px;
+	margin:0 auto;
+	width:500px;
+}
 /*--banner style start here--*/
 .banner{
 	background:url(../images/banner.jpg);
@@ -785,10 +795,10 @@ span.m {
 }
 .list{
 	background: #DDD;
-	min-height:750px;
+	min-height:746px;
 }
 .list .user{
-	padding-top = 10px;
+	/*padding-top: 10px;*/
 	height:50px;
 	line-height:50px;
 	border-bottom:1px solid #ccc;
@@ -807,7 +817,7 @@ span.m {
 	float:left;
 }
 .joinList .user{
-	padding-top = 10px;
+	padding-top: 10px;
 	height:50px;
 	line-height:50px;
 }
@@ -1396,7 +1406,7 @@ ul.p_n-list .neg{
 .e-right h4 {
 	font-size: 1.5em;
 	font-weight: 400;
-	color: #9b242d;
+	color: #000000;
 	margin: 0.5em 0px;
 }
 .event-icon span {
@@ -1519,7 +1529,7 @@ span.u:hover{
    color: #fff;
    text-transform: uppercase;
  }
-.info: hover {
+.info:hover {
    -webkit-box-shadow: 0 0 5px #000;
    -moz-box-shadow: 0 0 5px #000;
    box-shadow: 0 0 5px #000;
@@ -1843,7 +1853,7 @@ ul.res li a:hover,ul.res li a.active{
 	display:block;
 	width:100%;
 	padding:10px;
-	color:#00;
+	color:#000000;
 	font-size:14px;
 	background:rgba(153, 153, 153, 0.21);
 }

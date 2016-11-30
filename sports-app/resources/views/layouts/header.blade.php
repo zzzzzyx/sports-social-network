@@ -6,21 +6,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 <!DOCTYPE html>
 <html>
 <head>
+    @yield('head_more')
     <title>My Charity A Charity  category Flat bootstrap Responsive  Website Template| Home :: w3layouts</title>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!--web-fonts-->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <!--js-->
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
     <meta name="keywords" content="My Charity Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndriodCompatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <!-- start-smoth-scrolling -->
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="/js/move-top.js"></script>
+    <script type="text/javascript" src="/js/easing.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){
@@ -37,14 +38,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
     <div class="container">
         <div class="header">
             <div class="logo">
-                <a href="index.html"> <img src="images/logo.png" alt=""/> </a>
+                <a href="{{ url('/') }}"> <img src="/images/logo.png" alt=""/> </a>
             </div>
-            <span class="menu"> <img src="images/icon.png" alt=""/></span>
+            <span class="menu"> <img src="/images/icon.png" alt=""/></span>
             <div class="clear"> </div>
             <div class="navg">
                 <ul class="res">
                     <li><a @yield('mainPageActive') href="{{ url('/') }}">主页</a></li>
-                    <li><a @yield('activityActive') href="{{ url('/activity') }}">活动</a></li>
+                    <li><a @yield('activityActive') href="{{ url('/activity/list/0') }}">活动</a></li>
                     <li><a @yield('exerciseActive') href="{{ url('/exercise') }}">健身与动态</a></li>
                     <li><a @yield('friendActive') href="{{ url('/friend') }}">好友</a></li>
                     <li><a @yield('personActive') href="{{ url('/person') }}">个人</a></li>
@@ -72,7 +73,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
             <div class="footer-navg">
                 <ul>
                     <li><a @yield('mainPageActive') href="{{ url('/') }}">主页</a></li>
-                    <li><a @yield('activityActive') href="{{ url('/activity') }}">活动</a></li>
+                    <li><a @yield('activityActive') href="{{ url('/activity/list/0') }}">活动</a></li>
                     <li><a @yield('exerciseActive') href="{{ url('/exercise') }}">健身与动态</a></li>
                     <li><a @yield('friendActive') href="{{ url('/friend') }}">好友</a></li>
                     <li><a @yield('personActive') href="{{ url('/person') }}">个人</a></li>
