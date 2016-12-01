@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BlurUser;
 use Illuminate\Http\Request;
 use App\Activity;
 use App\User;
@@ -24,8 +25,9 @@ class ActivityController extends Controller
             case 2:$activityTrioList[1] = $activityList[$pos + 1];
             case 1:$activityTrioList[0] = $activityList[$pos + 0];
         }
-        $listNum = ceil(count($activityList)/3);
-        return view('activity',compact('activityTrioList','pos','listNum'));
+        $numPerPage = 3;
+        $listNum = ceil(count($activityList)/$numPerPage);
+        return view('activity',compact('activityTrioList','pos','numPerPage','listNum'));
     }
     public function addActivity (){
         return view('activityAdd');
@@ -51,17 +53,11 @@ class ActivityController extends Controller
         $activity = Activity::where('id', '=', $id)->get()[0];
         $launcherName = User::where('id', '=', $activity->users_id)->get()[0]->name;
 
-        $pId = explode("-",$activity->participants);
-        $pCount = 0;
-        foreach ($pId as $one){
-            $pName[$pCount] = User::where('id', '=', $one)->get()[0]->name;
-            $pPic[$pCount] = User::where('id', '=', $one)->get()[0]->image;
-            $pCount++;
-        }
-        $user = Auth::user();
-        $presentUserId = $user->id;
-
-        return view('singleActivity',compact('activity','launcherName','pId','pName','pCount','presentUserId'));
+        $idList = explode("-",$activity->participants);
+        $blurUserList = User::getBlurList($idList);
+        $presentUserId = Auth::user()->id;
+        $isParticipant = in_array($presentUserId,$idList);
+        return view('singleActivity',compact('activity','launcherName','blurUserList','presentUserId','isParticipant'));
     }
     public function attend (Request $request,$id){
         $activity = Activity::where('id', '=', $id)->get()[0];

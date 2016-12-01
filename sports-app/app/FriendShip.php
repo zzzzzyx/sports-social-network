@@ -28,8 +28,11 @@ class Friendship extends Model
             $small = $user_id_2;
             $big = $user_id_1;
         }
-
-        $friendship_id = Friendship::where(['user_id_low'=>$small,'user_id_high'=>$big])->first()->id;
-        return $friendship_id;
+        $friendship = Friendship::where(['user_id_low'=>$small,'user_id_high'=>$big])->first();
+        if($friendship == null){
+            return null;
+        }
+        else
+            return $friendship->id;
     }
 }

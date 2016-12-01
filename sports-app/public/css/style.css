@@ -1028,7 +1028,15 @@ ul.blog-list li a:hover{
 	display:block;
 }
 .blog-section {
-	margin: 4em 0px;
+	margin: 2em 0px;
+}
+.noExercise{
+	/*margin:10% 20%;*/
+	font-size: 1.48em;
+	font-weight: 500;
+	color: #0b0b0b;
+	text-align: center;
+	margin-top: 30%
 }
 .blog-right h3 {
 	font-size: 1.2em;
@@ -1268,7 +1276,7 @@ ul.p_n-list .neg{
 	float:left;
 }
 .aaa{
-	width:62%;
+	width:31.3%;
 	margin-right:0px;
 	float:left;
 }
@@ -1682,7 +1690,7 @@ span.u:hover{
       -o-transition: all 0.3s ease;
 }
 .get-right textarea {
-	width: 86%;
+	width: 90%;
 	height: 12em;
 	outline: none;
 	resize: none;

@@ -28,9 +28,9 @@ function isover($endTime){
 			<h3>活动详情</h3>
             @if(isover($activity->endTime))
 					<button type="button" class="btn btn-warning btn-lg disabled">已经结束</button>
-				@elseif($activity->users_id == $presentUserId))
+				@elseif($activity->users_id == $presentUserId)
 					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/delete')">删除活动</button>
-				@elseif(in_array($presentUserId,$pId))
+				@elseif($isParticipant)
 					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/leave')">现在退出</button>
 				@else
 					<button type="button" class="btn btn-info btn-lg" onclick="window.location.href=(document.URL + '/attend')">立即加入</button>
@@ -40,13 +40,15 @@ function isover($endTime){
 			<div class="col-md-8 blog-left">
 		   <div class="blog-grid">
 			   <div class="grid-left">
-			      <h3>17</h3>
-			      <p>Oct</p>
+				   <?php
+				   echo "<h3>".date("d",strtotime($activity->startTime))."</h3>";
+				   echo "<p>".date("M",strtotime($activity->startTime))."</p>";
+				   ?>
 			   </div>
 			   <div class="grid-right">
 			   		<h3>{{$activity->title}}</h3>
 			   	   <ul class="blog-list">
-			   	   	  <li><span class="mike"> </span><a href="person.html">发起人：{{$launcherName}}</a></li>
+			   	   	  <li><span class="mike"> </span><a href="{{url('/person/'.$activity->users_id.'/0')}}">发起人：{{$launcherName}}</a></li>
 			   	   	  <li><span class="box"> </span><a href="#">参与人数： {{$activity->hasAttended}}/{{$activity->maxAttend}}</a></li>
 			   	   	   <li><span class="comm"> </span><a href="#">浏览热度：{{$activity->watchTime}}人次</a></li>
 			   	   </ul>
@@ -61,9 +63,9 @@ function isover($endTime){
             </div>
             <div class="blog-contact">
             	<h3>已参加者</h3>
-				@for ($i = 0; $i < $pCount; $i++)
-					<div class="joinList"><a href="person.html"><div class= "user"> <img src="../images/user.jpg"> <span>{{$pName[$i]}}</span> </div></a></div>
-				@endfor
+				@foreach ($blurUserList as $blur)
+					<div class="joinList"><a href="{{url('/person/'.$blur->id.'/0')}}"><div class= "user"> <img src="/images/user.jpg"> <span>{{$blur->name}}</span> </div></a></div>
+				@endforeach
 
                 <div class="clearfix"></div>
             </div>

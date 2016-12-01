@@ -12,7 +12,7 @@
                     <h3 align="center">好友列表</h3>
                 </div>
                 <dlv class="col-md-9 chat-top">
-                    <p>正在与 <b>{{$chatFriendName}}</b> 对话中</p>
+                    <p>正在与 <a href="{{url('/person/'.$id.'/0')}}"><b>{{$chatFriendName}}</b></a> 对话中</p>
             </div>
             <div class="col-md-3 list">
                 @for ($i = 0; $i < $pCount; $i++)

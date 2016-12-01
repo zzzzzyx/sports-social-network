@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Statistic;
+use App\Exercise;
 use App\Http\Requests;
 
 class MainPageController extends Controller
@@ -15,12 +18,8 @@ class MainPageController extends Controller
     //
     public function index (){
         $user = Auth::user();
-        $exerciseHour = 16;
-        $continuousExer = 25;
-        $overallExer = 31;
-        $kilometers = 273.4;
-        $grade = '「小试牛刀」';
-        return view('index',compact('exerciseHour','continuousExer','overallExer','kilometers','grade'));
-
+        $exerciseList = Exercise::where('user_id','=',$user->id)->get()->sortBy('startTime');
+        $statistic = Statistic::where('user_id','=',$user->id)->first();
+        return view('index',compact('statistic','exerciseList'));
     }
 }
