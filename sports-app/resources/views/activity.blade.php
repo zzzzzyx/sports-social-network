@@ -1,4 +1,8 @@
 @extends('layouts.header')
+@section('head_more')
+	<meta name="keywords" content="健身,活动">
+	<meta name="description" content="参与各种各样的活动，和小伙伴们一起健身吧！">
+@endsection
 @section('activityActive')
 	class="active"
 	@endsection
@@ -18,7 +22,11 @@
 			<div class="event-main">
 				<div class="event-head">
 					<h3>热门活动</h3>
-					<a href="{{ url('/activity/add') }}"><button type="button" class="btn btn-info btn-lg">发起活动</button></a>
+					@if($userGrade > 2 || $userGrade == 0)
+						<a href="{{ url('/activity/add') }}"><button type="button" class="btn btn-info btn-lg">发起活动</button></a>
+						@else
+						<button type="button" class="btn btn-danger btn-lg disabled" title="提示">无权限发起活动</button></a>
+						@endif
 				</div>
 				<div class="clearfix"></div>
 				<div class="event-top">

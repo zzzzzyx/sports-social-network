@@ -18,7 +18,11 @@ class FriendController extends Controller
     //
     public function index (){
         $user = Auth::user();
+
         $friendIdList = FriendShip::getFriends($user->id);
+        if($friendIdList == 0){
+            return view('noFriend');
+        }
         return redirect('/friend/chatwith/'.$friendIdList[0]);
     }
     public function chatwith (Request $request,$id){
@@ -27,11 +31,11 @@ class FriendController extends Controller
 
         $pCount = 0;
         foreach ($friendIdList as $one){
-            $pName[$pCount] = User::where('id', '=', $one)->get()[0]->name;
-            $pPic[$pCount] = User::where('id', '=', $one)->get()[0]->image;
+            $pName[$pCount] = User::where('id', '=', $one)->first()->name;
+            $pPic[$pCount] = User::where('id', '=', $one)->first()->image;
             $pCount++;
         }
-        $chatFriendName = User::where('id', '=', $id)->get()[0]->name;
+        $chatFriendName = User::where('id', '=', $id)->first()->name;
 
         $friendship_id = Friendship::findFriendShipId($id, $user->id);
         $dialogList = Dialog::where('friendship_id','=',$friendship_id)->get();

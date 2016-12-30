@@ -72,11 +72,11 @@ class AuthController extends Controller
 
         Statistic::create([
             'user_id' => User::where("email",'=',$data['email'])->first()->id,
-            'exercise_hour' => 0,
+            'exercise_minute' => 0,
             'continuous_exercise_day' => 0,
             'overall_exercise_day' => 0,
             'calories' => 0,
-            'grade' => "初出茅庐"
+            'grade' => 1
         ]);
         return $user;
     }

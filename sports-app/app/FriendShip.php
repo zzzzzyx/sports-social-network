@@ -10,12 +10,18 @@ class Friendship extends Model
         $left = Friendship::where('user_id_low', '=', $userId)->get();
         $right = Friendship::where('user_id_high', '=', $userId)->get();
 
+        $hasFriend = 0;
         foreach($left as $low){
             $result[] = $low->user_id_high;
+            $hasFriend = 1;
         }
 
         foreach($right as $low){
             $result[] = $low->user_id_low;
+            $hasFriend = 1;
+        }
+        if(!$hasFriend){
+            return 0;
         }
 
         return $result;

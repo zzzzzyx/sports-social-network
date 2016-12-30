@@ -2,6 +2,10 @@
 @section('personActive')
 	class="active"
 @endsection
+@section('head_more')
+	<meta name="keywords" content="健身,个人,主页">
+	<meta name="description" content="发布您的健身动态，分享给小伙伴们吧！">
+@endsection
 @section('content')
 	<!--blog start here-->
 	<div class="blog">
@@ -21,8 +25,8 @@
 				<div class="col-md-4 blog-right">
 					<h3>{{$name}}</h3>
 					<div style="width:200px; height:200px;"><img src="/images/liyang.jpg" width="100%" height="100%" /></div>
-					<div class="hh"><span>等阶</span></div> <div class="ss"><span>{{$statistic->grade}}</span></div><br>
-					<div class="hh"><span>总健身时长</span></div> <div class="ss"><span>{{$statistic->exercise_hour}}小时</span></div><br>
+					<div class="hh"><span>等阶</span></div> <div class="ss"><span>{{$statistic->getGrade()}}</span></div><br>
+					<div class="hh"><span>总健身时长</span></div> <div class="ss"><span>{{floor($statistic->exercise_minute/60)}}小时</span></div><br>
 					<div class="hh"><span>相当于跑了</span></div> <div class="ss"><span>{{$statistic->getLapNum()}}公里</span></div><br>
 					<div class="hh"><span>个性签名</span></div>
 					@if($signature != "")

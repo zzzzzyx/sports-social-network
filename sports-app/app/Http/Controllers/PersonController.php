@@ -56,8 +56,10 @@ class PersonController extends Controller
         }else{
             $noExercise = true;
         }
+        $this_statistic = Statistic::getInstance(Auth::user());
+        $userGrade = $this_statistic->grade;
         return view('person', compact('statistic','blurQuartetList', 'pos','noExercise', 'numPerPage', 'listNum'
-            ,'signature' ,'name', 'personId','friendship_id'));
+            ,'signature' ,'name', 'personId','friendship_id','userGrade'));
     }
     public function delete(Request $request,$id,$page){
         $friendship_id = Friendship::findFriendShipId($id, Auth::user()->id);

@@ -48,7 +48,7 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => 'C:\Users\st0001\Desktop\sports-social-network\sports-social-network\sports-app\database\production.sqlite',
+            'database' => 'C:\Users\S3\Desktop\web_project\sports-social-network\sports-social-network\sports-app\database\production.sqlite',
             'prefix'   => '',
         ],
 

@@ -11,7 +11,7 @@
                 <ul class="blog-list">
                     <li><span class="mike"> </span><a href="{{url('/person/'.$blur->user_id.'/0')}}">{{$blur->author}}</a></li>
                     <li><span class="comm"> </span><a href="/exercise/single/{{$blur->id}}/like">点赞 {{$blur->likerNum}}</a></li>
-                    @if($blur->editable)
+                    @if($blur->editable || $userGrade == 0)
                         <li>
                             <button type="button" class="btn btn-danger" onclick="window.location.href=('/exercise/single/'+{{$blur->id}}+'/delete')">
                                 删除

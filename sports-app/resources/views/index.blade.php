@@ -1,4 +1,8 @@
 @extends('layouts.header')
+@section('head_more')
+    <meta name="keywords" content="健身,活动,社交,管理">
+    <meta name="description" content="使用拜运动来管理您的健身活动！">
+@endsection
 @section('mainPageActive')
     class="active"
 @endsection
@@ -7,7 +11,7 @@
     <div class="banner">
         <div class="container">
             <div class="banner-main">
-                <h1>{{$statistic->exercise_hour}}</h1>
+                <h1>{{floor($statistic->exercise_minute/60)}}</h1>
                 <p>总健身小时数</p>
                 <div class="bwn">
                     <a href="{{url('/exercise/add')}}"> 立即健身 </a>
@@ -49,7 +53,7 @@
         </div>
         <div class="col-md-5 below-right">
             <div class="bg">
-                <h1>「{{$statistic->grade}}」</h1>
+                <h1>「{{$statistic->getGrade()}}」</h1>
                 <p>等阶</p>
             </div>
         </div>
