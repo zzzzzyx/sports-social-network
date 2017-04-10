@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BlurUser;
+use App\Statistic;
 use Illuminate\Http\Request;
 use App\Activity;
 use App\User;
@@ -17,6 +18,8 @@ class ActivityController extends Controller
     }
     //
     public function index (Request $request,$id){
+        $statistic = Statistic::getInstance(Auth::user());
+        $userGrade = $statistic->grade;
         $activityList = Activity::all();
         $pos = $id*3;
         switch(count($activityList) - $pos){
@@ -27,7 +30,7 @@ class ActivityController extends Controller
         }
         $numPerPage = 3;
         $listNum = ceil(count($activityList)/$numPerPage);
-        return view('activity',compact('activityTrioList','pos','numPerPage','listNum'));
+        return view('activity',compact('activityTrioList','pos','numPerPage','listNum','userGrade'));
     }
     public function addActivity (){
         return view('activityAdd');
@@ -57,7 +60,9 @@ class ActivityController extends Controller
         $blurUserList = User::getBlurList($idList);
         $presentUserId = Auth::user()->id;
         $isParticipant = in_array($presentUserId,$idList);
-        return view('singleActivity',compact('activity','launcherName','blurUserList','presentUserId','isParticipant'));
+
+        $userGrade = Statistic::getInstance(Auth::user())->grade;
+        return view('singleActivity',compact('activity','launcherName','blurUserList','presentUserId','isParticipant','userGrade'));
     }
     public function attend (Request $request,$id){
         $activity = Activity::where('id', '=', $id)->get()[0];

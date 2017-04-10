@@ -24,9 +24,7 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+Route::get('/api/exercise/add', 'ExerciseController@addPost_api');
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();

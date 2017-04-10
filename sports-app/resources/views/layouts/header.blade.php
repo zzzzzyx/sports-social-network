@@ -7,7 +7,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
 <html>
 <head>
     @yield('head_more')
-    <title>My Charity A Charity  category Flat bootstrap Responsive  Website Template| Home :: w3layouts</title>
+    <title>拜运动社交平台 - 您的健身，运动和社交管家</title>
+
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!--web-fonts-->
@@ -18,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
     </script>
-    <meta name="keywords" content="My Charity Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndriodCompatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
     <!-- start-smoth-scrolling -->
     <script type="text/javascript" src="/js/move-top.js"></script>
     <script type="text/javascript" src="/js/easing.js"></script>

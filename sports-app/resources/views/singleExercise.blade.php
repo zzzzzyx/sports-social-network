@@ -2,6 +2,10 @@
 @section('exerciseActive')
 	class="active"
 @endsection
+@section('head_more')
+    <meta name="keywords" content="健身,动态,数据">
+    <meta name="description" content="在这里记录您每天的运动健身数据，管理并统计您的健身情况">
+@endsection
 @section('content')
 	<!--single page start here-->
 	<!--blog start here-->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Exercise;
 use App\User;
+use App\Statistic;
 use App\BlurExercise;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
@@ -17,7 +18,7 @@ class ExerciseController extends Controller
     }
     //
     public function index (Request $request,$id){
-        $exerciseList = Exercise::all()->sortByDesc('startTime');
+        $exerciseList = Exercise::where('id','<',200)->get()->sortByDesc('startTime');
         $pos = $id*4;
         foreach ($exerciseList as $exercise){
             $blur = new BlurExercise($exercise);
@@ -30,10 +31,12 @@ class ExerciseController extends Controller
             case 2:$blurQuartetList[1] = $blurList[$pos + 1];
             case 1:$blurQuartetList[0] = $blurList[$pos + 0];
         }
+        $statistic = Statistic::getInstance(Auth::user());
+        $userGrade = $statistic->grade;
         array_reverse($blurQuartetList);
         $numPerPage = 4;
         $listNum = ceil(count($blurList)/$numPerPage);
-        return view('exercise',compact('blurQuartetList','pos','numPerPage','listNum'));
+        return view('exercise',compact('blurQuartetList','pos','numPerPage','listNum','userGrade'));
     }
     public function add (){
         return view('exerciseAdd');
@@ -50,6 +53,21 @@ class ExerciseController extends Controller
         $exercise->calories  = $request->calories;
         $exercise->user_id  = Auth::user()->id ;
         $exercise->save();
+        Statistic::renew($exercise,Auth::user());
+        return view('success');
+    }
+    public function addPost_api (Request $request){
+        $exercise = new Exercise;
+        $exercise->title = $request->title;
+        $exercise->startTime = $request->startTime;
+        $exercise->exerciseTime = $request->exerciseTime;
+        $exercise->spot = $request->spot;
+        $exercise->label  = substr($request->label,1);
+        $exercise->description  = $request->description;
+        $exercise->calories  = $request->calories;
+        $exercise->user_id  = $request->id ;
+        $exercise->save();
+        Statistic::renew($exercise,Auth::user());
         return view('success');
     }
 

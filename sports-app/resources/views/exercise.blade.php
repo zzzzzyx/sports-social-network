@@ -2,6 +2,10 @@
 @section('exerciseActive')
 	class="active"
 @endsection
+@section('head_more')
+	<meta name="keywords" content="健身,动态,数据">
+	<meta name="description" content="在这里记录您每天的运动健身数据，管理并统计您的健身情况">
+@endsection
 @section('content')
 	<!--blog start here-->
 
@@ -24,12 +28,7 @@
 					</div>
 
 					<div class="col-md-12 btrnnnn"><a href="{{url('/exercise/add')}}"><button type="button" class="btn btn-success recordBtn">记录新的健身</button></a></div>
-					<!-- <div class="subscribe">
-                        <p>简要说说今天健身的心得吧！</p>
-                    <div class="sub">
-                        <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
-                        <input type="submit" value="发表">
-                    </div> -->
+
 				</div>
 				<div class="clearfix"> </div>
 			</div>

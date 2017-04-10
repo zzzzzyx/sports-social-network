@@ -2,6 +2,10 @@
 @section('friendActive')
     class="active"
 @endsection
+@section('head_more')
+    <meta name="keywords" content="好友,聊天">
+    <meta name="description" content="与您的健身朋友一起聊天吧！">
+@endsection
 @section('content')
 
     <div class="chat">

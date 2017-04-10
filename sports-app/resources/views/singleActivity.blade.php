@@ -2,6 +2,10 @@
 @section('activityActive')
 	class="active"
 @endsection
+@section('head_more')
+	<meta name="keywords" content="健身,活动">
+	<meta name="description" content="参与各种各样的活动，和小伙伴们一起健身吧！">
+@endsection
 @section('content')
 <!--single page start here-->
 <!--blog start here-->
@@ -28,7 +32,7 @@ function isover($endTime){
 			<h3>活动详情</h3>
             @if(isover($activity->endTime))
 					<button type="button" class="btn btn-warning btn-lg disabled">已经结束</button>
-				@elseif($activity->users_id == $presentUserId)
+				@elseif($activity->users_id == $presentUserId || $userGrade == 0)
 					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/delete')">删除活动</button>
 				@elseif($isParticipant)
 					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/leave')">现在退出</button>

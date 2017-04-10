@@ -11,11 +11,15 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Exercise::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
-        'remember_token' => str_random(10),
+        'user_id' => '16',
+        'title' => $faker->sentence,
+        'startTime' => $faker->dateTime,
+        'exerciseTime' => $faker->numberBetween(20,87),
+        'calories' => $faker->numberBetween(1000,5000),
+        'spot' => $faker->streetName,
+        'description' => $faker->sentence,
+        'label' => $faker->colorName."#".$faker->colorName,
     ];
 });

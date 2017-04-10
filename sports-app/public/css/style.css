@@ -1711,6 +1711,15 @@ span.u:hover{
 	font-weight: 400;
 	color: #9B242D;
 	margin-bottom: 5px;
+	float: left;
+	min-width: 100px;
+}
+.remind_msg {
+	font-size: 15px;
+	font-weight: 400;
+	color: #9b1c46;
+	margin-bottom: 5px;
+	min-width: 100px;
 }
 .get-right h4 {
 	font-size: 16px;
