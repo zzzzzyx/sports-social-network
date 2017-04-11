@@ -35,7 +35,7 @@ class PersonController extends Controller
         if(count($exerciseList)>0){
             $pos = $page * 4;
             foreach ($exerciseList as $exercise) {
-                $blur = new BlurExercise($exercise);
+                $blur = new BlurExercise($exercise,Auth::user());
                 $blurList[] = $blur;
             }
             switch (count($blurList) - $pos) {

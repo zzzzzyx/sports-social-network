@@ -11,9 +11,9 @@
                 <ul class="blog-list">
                     <li><span class="mike"> </span><a href="{{url('/person/'.$blur->user_id.'/0')}}">{{$blur->author}}</a></li>
                     @if(!$blur->thisUserLikeOrNot)
-                        <li><span class="comm"> </span><a href="/exercise/{{$id}}/{{$blur->id}}/likeInList">点赞 {{$blur->likerNum}}</a></li>
+                        <li><span class="comm"> </span><a href="/exercise/single/{{$blur->id}}/like?returnUrl={{$_SERVER['REQUEST_URI']}}">点赞 {{$blur->likerNum}}</a></li>
                     @else
-                        <li><span class="comm"> </span><a href="/exercise/{{$id}}/{{$blur->id}}/likeInList">取消点赞 {{$blur->likerNum}}</a></li>
+                        <li><span class="comm"> </span><a href="/exercise/single/{{$blur->id}}/like?returnUrl={{$_SERVER['REQUEST_URI']}}">取消点赞 {{$blur->likerNum}}</a></li>
                     @endif
                     @if($blur->editable || $userGrade == 0)
                         <li>
