@@ -30,9 +30,9 @@
 								<li><span class="mike"> </span><a href="{{url('/person/'.$launcherId.'/0')}}">{{$launcherName}}</a></li>
 
 								@if(!$exercise->likerContainUserOrNot(Auth::user()))
-									<li><span class="comm"> </span><a href="/exercise/single/{{$exercise->id}}/like">点赞 {{$exercise->getLikerNum()}}</a></li>
+									<li><span class="comm"> </span><a href="/exercise/single/{{$exercise->id}}/likeInSingle">点赞 {{$exercise->getLikerNum()}}</a></li>
 								@else
-									<li><span class="comm"> </span><a href="/exercise/single/{{$exercise->id}}/like">取消点赞 {{$exercise->getLikerNum()}}</a></li>
+									<li><span class="comm"> </span><a href="/exercise/single/{{$exercise->id}}/likeInSingle">取消点赞 {{$exercise->getLikerNum()}}</a></li>
 								@endif
 							</ul>
 							<p>再接再厉哦！</p>

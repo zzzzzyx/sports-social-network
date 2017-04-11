@@ -28,6 +28,20 @@ class Exercise extends Model
             }
         }
     }
+    public function addLiker($user){
+        $likerList = explode("-",$this->liker);
+        if($this->liker == ""){
+            $this->liker = $user->id;
+        }else{
+            if($this->likerContainUserOrNot($user)){//exist
+                $pos = array_search($user->id,$likerList);
+                unset($likerList[$pos]);
+            }else{//not exist
+                $likerList[] = $user->id;
+            }
+            $this->liker = implode("-",$likerList);
+        }
+    }
 
 }
 class BlurExercise{

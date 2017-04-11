@@ -36,7 +36,7 @@ class ExerciseController extends Controller
         array_reverse($blurQuartetList);
         $numPerPage = 4;
         $listNum = ceil(count($blurList)/$numPerPage);
-        return view('exercise',compact('blurQuartetList','pos','numPerPage','listNum','userGrade'));
+        return view('exercise',compact('blurQuartetList','pos','numPerPage','listNum','userGrade','id'));
     }
     public function add (){
         return view('exerciseAdd');
@@ -86,23 +86,17 @@ class ExerciseController extends Controller
         return view('singleExercise',compact('exercise','launcherName','launcherId','blurUserList'));
     }
 
-    public function like (Request $request,$id){
+    public function likeInSingle (Request $request,$id){
         $exercise = Exercise::where('id', '=', $id)->first();
-        $user = Auth::user();
-        $likerList = explode("-",$exercise->liker);
-        if($exercise->liker == ""){
-            $exercise->liker = $user->id;
-        }else{
-            if(!in_array($user->id,$likerList)){//not exist
-                $likerList[] = $user->id;
-            }else{// exist
-                $pos = array_search($user->id,$likerList);
-                unset($likerList[$pos]);
-            }
-            $exercise->liker = implode("-",$likerList);
-        }
+        $exercise->addLiker(Auth::user());
         $exercise->save();
         return redirect('/exercise/single/'.$id);
+    }
+    public function likeInList (Request $request,$page,$id){
+        $exercise = Exercise::where('id', '=', $id)->first();
+        $exercise->addLiker(Auth::user());
+        $exercise->save();
+        return redirect('/exercise/'.$page);
     }
     public function delete (Request $request,$id){
         $exercise = Exercise::where('id', '=', $id)->get()[0];
