@@ -20,7 +20,7 @@ class ActivityController extends Controller
     public function index (Request $request,$id){
         $statistic = Statistic::getInstance(Auth::user());
         $userGrade = $statistic->grade;
-        $activityList = Activity::all();
+        $activityList = Activity::orderBy('created_at', 'desc')->get();
         foreach ($activityList as $activity){
             if(!$activity->isEnded())
                 $newAcList[] = $activity;
