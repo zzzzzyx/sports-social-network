@@ -927,8 +927,11 @@ span.m {
 .grid-left {
 	float: left;
 	width: 10%;
-	border: 1px solid #000;
 	padding: 10px 22px;
+    background: url(../images/calendar.png);
+    -webkit-background-size:100%;
+    background-size:100%;
+    overflow: hidden;
 }
 ul.blog-list {
 	padding: 0px;
@@ -977,7 +980,8 @@ ul.blog-list li a:hover{
 	width:85%;
 }
 .grid-right span.mike {
-	background: url(../images/per.png)no-repeat;
+	background: url(../images/per.png);
+    background-size: 100%;
 	width: 16px;
 	height: 16px;
 	display: inline-block;
@@ -991,11 +995,20 @@ ul.blog-list li a:hover{
 	margin: 0px 3px -3px 0px;
 }
 .grid-right span.comm {
-	background: url(../images/unl.png)no-repeat;
+	background: url(../images/unl.png);
+    background-size: 100%;
 	width: 16px;
 	height: 16px;
 	display: inline-block;
 	margin: 0px 3px -3px 0px;
+}
+.grid-right span.delete {
+    background: url(../images/delete.png);
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0px 3px -3px 0px;
 }
 .grid-right p {
 	font-size: 14px;
@@ -2377,6 +2390,7 @@ span.m {
 	width: 15%;
 	padding: 9px 17px;
 }
+
 .grid-right {
 	width: 80%;
 }
