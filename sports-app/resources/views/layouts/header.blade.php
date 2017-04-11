@@ -50,7 +50,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/-->
                     <li><a @yield('exerciseActive') href="{{ url('/exercise/0') }}">健身与动态</a></li>
                     <li><a @yield('friendActive') href="{{ url('/friend') }}">好友</a></li>
                     <li><a @yield('personActive') href="{{ url('/person') }}">个人</a></li>
-                    <li><a @yield('accountActive') href="{{ url('/account') }}">账户</a></li>
                     <li><a id="logout" href="{{ url('/logout') }}">Logout</a></li>
                 </ul>
                 <script>

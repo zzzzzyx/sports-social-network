@@ -1,5 +1,5 @@
 @extends('layouts.header')
-@section('accountActive')
+@section('personActive')
 	class="active"
 @endsection
 @section('content')

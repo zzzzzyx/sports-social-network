@@ -41,6 +41,8 @@
 							<a href="{{url('friend/chatwith/'.$personId)}}"><button type="button" class="btn btn-success">发送消息</button></a>
 						@elseif($friendship_id == null)
 							<button type="button" class="btn btn-danger" onclick="window.location.href=(document.URL + '/add')">加为好友</button>
+						@elseif($friendship_id < 0)
+							<a href="{{ url('/account') }}"><button type="button" class="btn btn-info">修改资料</button></a>
 						@endif
 					</div>
 				</div>
