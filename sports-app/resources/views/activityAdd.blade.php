@@ -97,6 +97,7 @@
 							<div class="hourhh"><span>人</span></div>
 						</div>
 						<div class="clearfix" ></div>
+						<input hidden value="{{url('activity/list/0')}}" name="returnUrl"/>
 						<input type="submit" value="发送">
 
 

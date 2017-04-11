@@ -123,6 +123,7 @@
 						</div>
 						<div class="kindofsport"><p>运动标签 <strong>(请输入本次健身的标签名，用#隔开。如:  #夜跑#南大#南大跑协)</strong></p></div>
 						<input type="text" value="" name="label"/>
+						<input hidden value="{{url('exercise/0')}}" name="returnUrl"/>
 						<input type="submit" value="发送">
 
 					</div>

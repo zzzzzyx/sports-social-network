@@ -17,7 +17,7 @@
                     @endif
                     @if($blur->editable || $userGrade == 0)
                         <li>
-                            <span class="delete"></span><a onclick="window.location.href=('/exercise/single/'+{{$blur->id}}+'/delete')">删除</a>
+                            <span class="delete"></span><a onclick="window.location.href=('/exercise/single/'+{{$blur->id}}+'/delete?returnUrl={{$_SERVER['REQUEST_URI']}}')">删除</a>
                         </li>
                     @endif
                 </ul>

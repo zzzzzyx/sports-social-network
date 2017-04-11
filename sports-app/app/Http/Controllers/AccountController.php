@@ -31,6 +31,7 @@ class AccountController extends Controller
         $user->qq = $request->qq;
         $user->signature = $request->signature;
         $user->save();
-        return view('success');
+        $returnUrl = $request->input('returnUrl');
+        return view('success',compact('returnUrl'));
     }
 }
