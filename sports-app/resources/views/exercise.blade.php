@@ -21,12 +21,6 @@
 				</div>
 				<div class="col-md-4 blog-right">
 
-					<div class="sear">
-
-						<input type="text" value="搜索好友" name="context"/>
-						<input type="submit" value="">
-					</div>
-
 					<div class="col-md-12 btrnnnn"><a href="{{url('/exercise/add')}}"><button type="button" class="btn btn-success recordBtn">记录新的健身</button></a></div>
 
 				</div>
