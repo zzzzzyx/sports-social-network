@@ -16,6 +16,19 @@ class Exercise extends Model
         return count($list);
     }
 
+    public function likerContainUserOrNot($user){
+        $likerList = explode("-",$this->liker);
+        if($this->liker == ""){
+            return false;
+        }else{
+            if(!in_array($user->id,$likerList)){//not exist
+                return false;
+            }else{// exist
+                return true;
+            }
+        }
+    }
+
 }
 class BlurExercise{
     public $day;
@@ -27,8 +40,9 @@ class BlurExercise{
     public $id;
     public $user_id;
     public $editable;
+    public $thisUserLikeOrNot;
 
-    public function __construct($exercise){
+    public function __construct($exercise, $thisUser){
         $this->title = $exercise->title;
         $this->description = $exercise->description;
         $this->id = $exercise->id;
@@ -42,5 +56,6 @@ class BlurExercise{
         }else{
             $this->editable = false;
         }
+        $this->thisUserLikeOrNot = $exercise->likerContainUserOrNot($thisUser);
     }
 }

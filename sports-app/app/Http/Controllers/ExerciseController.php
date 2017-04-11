@@ -21,7 +21,7 @@ class ExerciseController extends Controller
         $exerciseList = Exercise::where('id','<',200)->get()->sortByDesc('startTime');
         $pos = $id*4;
         foreach ($exerciseList as $exercise){
-            $blur = new BlurExercise($exercise);
+            $blur = new BlurExercise($exercise,Auth::user());
             $blurList[] = $blur;
         }
         switch(count($blurList) - $pos){

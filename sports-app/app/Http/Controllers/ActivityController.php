@@ -21,15 +21,19 @@ class ActivityController extends Controller
         $statistic = Statistic::getInstance(Auth::user());
         $userGrade = $statistic->grade;
         $activityList = Activity::all();
+        foreach ($activityList as $activity){
+            if(!$activity->isEnded())
+                $newAcList[] = $activity;
+        }
         $pos = $id*3;
-        switch(count($activityList) - $pos){
+        switch(count($newAcList) - $pos){
             default:
-            case 3:$activityTrioList[2] = $activityList[$pos + 2];
-            case 2:$activityTrioList[1] = $activityList[$pos + 1];
-            case 1:$activityTrioList[0] = $activityList[$pos + 0];
+            case 3:$activityTrioList[2] = $newAcList[$pos + 2];
+            case 2:$activityTrioList[1] = $newAcList[$pos + 1];
+            case 1:$activityTrioList[0] = $newAcList[$pos + 0];
         }
         $numPerPage = 3;
-        $listNum = ceil(count($activityList)/$numPerPage);
+        $listNum = ceil(count($newAcList)/$numPerPage);
         return view('activity',compact('activityTrioList','pos','numPerPage','listNum','userGrade'));
     }
     public function addActivity (){
