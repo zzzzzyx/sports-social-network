@@ -30,6 +30,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'MainPageController@index');
+    Route::get('/level', 'MainPageController@showLevel');
     Route::get('/activity/add', 'ActivityController@addActivity');
     Route::post('/activity/add', 'ActivityController@addActivityPost');
     Route::get('/activity/list/{id}', 'ActivityController@index');
@@ -41,10 +42,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/account', 'AccountController@editAccount');
     Route::get('/exercise/add', 'ExerciseController@add');
     Route::post('/exercise/add', 'ExerciseController@addPost');
-    Route::get('/exercise/single/{id}/likeInSingle', 'ExerciseController@likeInSingle');
+    Route::get('/exercise/single/{id}/like', 'ExerciseController@like');
     Route::get('/exercise/single/{id}/delete', 'ExerciseController@delete');
     Route::get('/exercise/single/{id}', 'ExerciseController@getSingle');
-    Route::get('/exercise/{page}/{id}/likeInList', 'ExerciseController@likeInList');
     Route::get('/exercise/{id}', 'ExerciseController@index');
     Route::get('/person/{id}/{page}/delete', 'PersonController@delete');
     Route::get('/person/{id}/{page}/add', 'PersonController@add');

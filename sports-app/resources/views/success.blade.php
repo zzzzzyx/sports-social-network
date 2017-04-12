@@ -4,7 +4,7 @@
         <div class="container">
             <div class="contact-main success-main">
                 <h3>操作成功！</h3>
-                <div class="return"><a href="{{ url('/') }}">点击这里返回主页</a></div>
+                <div class="return"><a href="{{ url($returnUrl) }}">点击这里返回</a></div>
 
             </div>
         </div>

@@ -22,4 +22,8 @@ class MainPageController extends Controller
         $statistic = Statistic::where('user_id','=',$user->id)->first();
         return view('index',compact('statistic','exerciseList'));
     }
+
+    public function showLevel(){
+        return view('level');
+    }
 }

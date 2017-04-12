@@ -18,7 +18,7 @@ class ExerciseController extends Controller
     }
     //
     public function index (Request $request,$id){
-        $exerciseList = Exercise::where('id','<',200)->get()->sortByDesc('startTime');
+        $exerciseList = Exercise::where('id','>',0)->get()->sortByDesc('startTime');
         $pos = $id*4;
         foreach ($exerciseList as $exercise){
             $blur = new BlurExercise($exercise,Auth::user());
@@ -36,7 +36,7 @@ class ExerciseController extends Controller
         array_reverse($blurQuartetList);
         $numPerPage = 4;
         $listNum = ceil(count($blurList)/$numPerPage);
-        return view('exercise',compact('blurQuartetList','pos','numPerPage','listNum','userGrade','id'));
+        return view('exercise',compact('blurQuartetList','pos','numPerPage','listNum','userGrade'));
     }
     public function add (){
         return view('exerciseAdd');
@@ -54,22 +54,26 @@ class ExerciseController extends Controller
         $exercise->user_id  = Auth::user()->id ;
         $exercise->save();
         Statistic::renew($exercise,Auth::user());
-        return view('success');
+
+        $returnUrl = $request->input('returnUrl');
+        return view('success',compact('returnUrl'));
     }
-    public function addPost_api (Request $request){
-        $exercise = new Exercise;
-        $exercise->title = $request->title;
-        $exercise->startTime = $request->startTime;
-        $exercise->exerciseTime = $request->exerciseTime;
-        $exercise->spot = $request->spot;
-        $exercise->label  = substr($request->label,1);
-        $exercise->description  = $request->description;
-        $exercise->calories  = $request->calories;
-        $exercise->user_id  = $request->id ;
-        $exercise->save();
-        Statistic::renew($exercise,Auth::user());
-        return view('success');
-    }
+//    public function addPost_api (Request $request){
+//        $exercise = new Exercise;
+//        $exercise->title = $request->title;
+//        $exercise->startTime = $request->startTime;
+//        $exercise->exerciseTime = $request->exerciseTime;
+//        $exercise->spot = $request->spot;
+//        $exercise->label  = substr($request->label,1);
+//        $exercise->description  = $request->description;
+//        $exercise->calories  = $request->calories;
+//        $exercise->user_id  = $request->id ;
+//        $exercise->save();
+//        Statistic::renew($exercise,Auth::user());
+//
+//        $returnUrl = $request->input('returnUrl');
+//        return view('success',compact('returnUrl'));
+//    }
 
     public function getSingle(Request $request,$id){
         $exercise = Exercise::where('id', '=', $id)->first();
@@ -86,22 +90,18 @@ class ExerciseController extends Controller
         return view('singleExercise',compact('exercise','launcherName','launcherId','blurUserList'));
     }
 
-    public function likeInSingle (Request $request,$id){
+    public function like (Request $request,$id){
         $exercise = Exercise::where('id', '=', $id)->first();
         $exercise->addLiker(Auth::user());
         $exercise->save();
-        return redirect('/exercise/single/'.$id);
-    }
-    public function likeInList (Request $request,$page,$id){
-        $exercise = Exercise::where('id', '=', $id)->first();
-        $exercise->addLiker(Auth::user());
-        $exercise->save();
-        return redirect('/exercise/'.$page);
+        return redirect($request->input('returnUrl'));
     }
     public function delete (Request $request,$id){
         $exercise = Exercise::where('id', '=', $id)->get()[0];
         $exercise->delete();
-        return view('success');
+
+        $returnUrl = $request->input('returnUrl');
+        return view('success',compact('returnUrl'));
     }
 
 }

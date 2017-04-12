@@ -1,5 +1,5 @@
 @extends('layouts.header')
-@section('accountActive')
+@section('personActive')
 	class="active"
 @endsection
 @section('content')
@@ -27,6 +27,7 @@
 			  	 <input type="text" value="{{$qq}}" name="qq"/>
                  <p>个性签名</p>
 			  	<textarea name="signature" />{{$signature}}</textarea>
+				  <input hidden value="{{$_SERVER['REQUEST_URI']}}" name="returnUrl"/>
 			  	 <input class="sbBtn" type="submit" value="保存">
 			  </div></form>
 			  <div class="col-md-6 edit-right">

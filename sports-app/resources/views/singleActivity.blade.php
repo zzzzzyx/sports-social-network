@@ -33,11 +33,11 @@ function isover($endTime){
             @if(isover($activity->endTime))
 					<button type="button" class="btn btn-warning btn-lg disabled">已经结束</button>
 				@elseif($activity->users_id == $presentUserId || $userGrade == 0)
-					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/delete')">删除活动</button>
+					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/delete?returnUrl={{url('activity/list/0')}}')">删除活动</button>
 				@elseif($isParticipant)
-					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/leave')">现在退出</button>
+					<button type="button" class="btn btn-danger btn-lg" onclick="window.location.href=(document.URL + '/leave?returnUrl={{$_SERVER['REQUEST_URI']}}')">现在退出</button>
 				@else
-					<button type="button" class="btn btn-info btn-lg" onclick="window.location.href=(document.URL + '/attend')">立即加入</button>
+					<button type="button" class="btn btn-info btn-lg" onclick="window.location.href=(document.URL + '/attend?returnUrl={{$_SERVER['REQUEST_URI']}}')">立即加入</button>
 				@endif
 			</div>
             <div class="clearfix"></div>

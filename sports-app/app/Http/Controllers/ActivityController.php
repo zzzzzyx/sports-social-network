@@ -53,7 +53,8 @@ class ActivityController extends Controller
         $user->users_id  = Auth::user()->id ;
         $user->participants = Auth::user()->id;
         $user->save();
-        return view('success');
+        $returnUrl = $request->input('returnUrl');
+        return view('success',compact('returnUrl'));
     }
 
     public function get (Request $request,$id){
@@ -74,7 +75,8 @@ class ActivityController extends Controller
         $activity->participants = $activity->participants."-".$user->id;
         $activity->hasAttended += 1;
         $activity->save();
-        return view('success');
+        $returnUrl = $request->input('returnUrl');
+        return view('success',compact('returnUrl'));
     }
 
     public function leave (Request $request,$id){
@@ -86,11 +88,13 @@ class ActivityController extends Controller
         $activity->participants = implode("-",$pId);
         $activity->hasAttended -= 1;
         $activity->save();
-        return view('success');
+        $returnUrl = $request->input('returnUrl');
+        return view('success',compact('returnUrl'));
     }
     public function delete (Request $request,$id){
         $activity = Activity::where('id', '=', $id)->get()[0];
         $activity->delete();
-        return view('success');
+        $returnUrl = $request->input('returnUrl');
+        return view('success',compact('returnUrl'));
     }
 }

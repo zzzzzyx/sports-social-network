@@ -8,7 +8,7 @@ class Statistic extends Model
 {
     protected $fillable = array('user_id', 'exercise_hour', 'continuous_exercise_day', 'overall_exercise_day', 'calories', 'grade');
 
-    protected $gradeToString = array('管理员','初出茅庐', '大有所为', '一代宗师');
+    protected $gradeToString = array('管理员','初出茅庐', '小有所成', '长驱深入','健身无涯');
     protected $gradeHourTable = array(20,150);
     protected $abstractStatistic;
 
@@ -39,7 +39,9 @@ class Statistic extends Model
         $statistic->exercise_minute += $exercise->exerciseTime;
         $statistic->calories += $exercise->calories;
         if($statistic->grade != 0) {
-            if ($statistic->exercise_minute > 60 * 150) {
+            if ($statistic->exercise_minute > 60 * 350) {
+                $statistic->grade = 4;
+            }elseif ($statistic->exercise_minute > 60 * 150) {
                 $statistic->grade = 3;
             }elseif ( $statistic->exercise_minute > 60 * 20 ){
                 $statistic->grade = 2;
