@@ -54,8 +54,8 @@
         </div>
         <div class="col-md-5 below-right">
             <div class="bg">
-                <h1>「{{$statistic->getGrade()}}」</h1>
-                <a href="{{url('/level')}}">等阶?</a>
+                <h1>「{{$statistic->getGrade()}}」<a href="{{url('/level')}}"><img src="images/help.png" style="width: 20px;margin-top:-60px"/></a></h1>
+                <p>等阶</p>
             </div>
         </div>
         <div class="clearfix"> </div>
