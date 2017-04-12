@@ -6,7 +6,7 @@ use App\StatisticAbstract;
 
 class StatisticCommon extends StatisticAbstract
 {
-    protected $gradeToString = array('初出茅庐', '大有所为', '一代宗师');
+    protected $gradeToString = array('初出茅庐', '小有所成', '长驱深入','健身无涯');
     function __construct($attributes)
     {
         parent::__construct($attributes);

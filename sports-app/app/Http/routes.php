@@ -30,6 +30,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'MainPageController@index');
+    Route::get('/level', 'MainPageController@showLevel');
     Route::get('/activity/add', 'ActivityController@addActivity');
     Route::post('/activity/add', 'ActivityController@addActivityPost');
     Route::get('/activity/list/{id}', 'ActivityController@index');
