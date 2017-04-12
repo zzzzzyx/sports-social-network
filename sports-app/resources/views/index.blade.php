@@ -7,6 +7,7 @@
     class="active"
 @endsection
 @section('content')
+
     <!--banner start here-->
     <div class="banner">
         <div class="container">
@@ -40,11 +41,11 @@
         <div class="col-md-7 below-left">
             <div class="below-top">
                 <h2>全站搜索用户</h2>
-                    <form method="POST" action="{{url('/search')}}">
-                        <input type="text" value="" name="context"/>
-                        <input type="submit" value="搜索">
-                        {{--<button type="button" class="btn" onclick="window.location.href=(document.URL + 'search')">搜索</button></a>--}}
-                    </form>
+                <form method="POST" action="{{url('/search')}}">
+                    <input type="text" value="" name="context"/>
+                    <input type="submit" value="搜索">
+                    {{--<button type="button" class="btn" onclick="window.location.href=(document.URL + 'search')">搜索</button></a>--}}
+                </form>
                 <p>根据昵称搜索其他用户，以查看，添加好友</p>
             </div>
             <div class="below-bottom">
@@ -54,7 +55,7 @@
         <div class="col-md-5 below-right">
             <div class="bg">
                 <h1>「{{$statistic->getGrade()}}」</h1>
-                <p>等阶</p>
+                <a href="{{url('/level')}}">等阶?</a>
             </div>
         </div>
         <div class="clearfix"> </div>

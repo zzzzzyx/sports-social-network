@@ -9,6 +9,7 @@
 @section('content')
 	<!--single page start here-->
 	<!--blog start here-->
+
 	<div class="blog">
 		<div class="container">
 			<div class="blog-main">
@@ -19,9 +20,8 @@
 					<div class="blog-grid">
 						<div class="grid-left">
 							<?php
-							echo "<p>".date("H:i",strtotime($exercise->startTime))."</p>";
-							echo "<h3>".date("d",strtotime($exercise->startTime))."</h3>";
-							echo "<p>".date("M",strtotime($exercise->startTime))."</p>";
+							echo "<p style=\"text-align: center;padding-top: 5px\">".date("H:i",strtotime($exercise->startTime))."</p>";
+							echo "<h3 style=\"text-align: center\">".date("d",strtotime($exercise->startTime))."</h3>";
 							?>
 						</div>
 						<div class="grid-right">
@@ -35,7 +35,6 @@
 									<li><span class="comm"> </span><a href="/exercise/single/{{$exercise->id}}/likeInSingle">取消点赞 {{$exercise->getLikerNum()}}</a></li>
 								@endif
 							</ul>
-							<p>再接再厉哦！</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -69,7 +68,7 @@
 						<?php
 						$tagList = explode("#", $exercise->label);
 						foreach($tagList as $tag){
-							echo "<li><a href=\"#\">".$tag."</a></li>";
+							echo "<li><span href=\"#\">".$tag."</span></li>";
 						};
 
 						?>

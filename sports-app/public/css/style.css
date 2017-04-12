@@ -927,11 +927,10 @@ span.m {
 .grid-left {
 	float: left;
 	width: 10%;
-	padding: 10px 22px;
-    background: url(../images/calendar.png);
+	padding: 10px 20px;
+    background: url(../images/calendar.png) no-repeat;
     -webkit-background-size:100%;
     background-size:100%;
-    overflow: hidden;
 }
 ul.blog-list {
 	padding: 0px;
@@ -1145,7 +1144,7 @@ ul.popular-tag li {
 	margin:0px 10px 1.5em 0px;
 	display: inline-block;
 }
-ul.popular-tag li a {
+ul.popular-tag li span {
 	font-size: 14px;
 	font-weight: 400;
 	background: #000;
@@ -1236,41 +1235,6 @@ ul.popular-tag li a:hover {
 }
 .blog-left img {
 	width: 100%;
-}
-ul.p_n-list {
-	list-style: none;
-	padding: 0px;
-	text-align: center;
-}
-ul.p_n-list li {
-	display: inline-block;
-	margin: 0px 1em 0px 0px;
-}
-ul.p_n-list li a {
-	font-size: 1em;
-	font-weight: 400;
-	color: #fff;
-	background: #9B242D;
-	padding: 10px 1em;
-}
-ul.p_n-list li a:hover{
-	color:#fff;
-	background:#373838;
-	text-decoration:none;
-	transition: all 0.3s ease; 
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-}
-ul.p_n-list .neg{
-	padding: 10px 1em;
-	color:#fff;
-	background:#373838;
-	text-decoration:none;
-	transition: all 0.3s ease; 
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 /*--blog style end here--*/
 .kindofsport{

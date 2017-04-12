@@ -86,54 +86,65 @@
 			return checkTitle() && checkSpot() && checkDescription() && checkStartTime();
 		}
 	</script>
-	<!--contact start here-->
-	<div class="contact">
-		<div class="container">
-			<div class="contact-main">
-				<h3>记录新的健身</h3>
-			</div>
-		</div>
-	</div>
+
 	<!--contact end here-->
 	<!--get touch start here-->
-	<form method="POST" action="{{ url('/exercise/add') }}"  onsubmit="return checkForm();">
-		<div class="get">
-			<div class="container">
+	<div class="container-fluid">
+	<form method="POST" action="{{ url('/exercise/add') }}"  onsubmit="return checkForm();" class="form-horizontal col-md-offset-2 col-md-8">
+		<div class="form-group contact-main">
+			<h3>记录新的健身</h3>
+		</div>
+		<div class="form-group">
+			<label for="fname" class="col-md-3 control-label">标  题</label>
+			<div class="col-md-9">
+				<input name="title" type="text" class="form-control col-sm-8" id="fname" placeholder="请输入标题，长度小于15字" maxlength="15">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="spot" class="col-md-3 control-label">运动地点</label>
+			<div class="col-md-9">
+				<input type="text" name="spot" id="spot1" onblur="checkSpot()" class="form-control col-sm-8" placeholder="请输入地点，长度小于15字" maxlength="15"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="startTime" class="col-md-3 control-label">健身开始时间</label>
+			<div class="col-md-9">
+				<input type="datetime" class="form_datetime form-control col-sm-8" name="startTime" id="startTime" onblur="checkStartTime()">
+			</div>
 
-				<div class="get-main">
-					<div class="col-md-6 get-left">
-						<p>标题</p>
-						<span id="name_msg" class="remind_msg"></span>
-						<input name="title" type="text" value="" id="fname" onblur="checkTitle()" />
-						<div class="clearfix" ></div>
-						<p>运动地点</p>
-						<span id="spot_msg" class="remind_msg"></span>
-						<input type="text" value="" name="spot" id="spot" onblur="checkSpot()" />
-						<div class="clearfix" ></div>
-						<p>健身开始时间</p>
-						<span id="startTime" class="remind_msg"></span>
-						<input size="16" type="text" value="" readonly class="form_datetime" name="startTime" id="startTime" onblur="checkStartTime()">
-						<div class="aaa"><span>健身时长</span></div>                 <div class="bbb"><span>预估运动量</span></div>
-						<div class="clearfix" ></div>
-						<div class="inputHourhh">
-							<div class="halfInput"><input  type="text" value="" name="exerciseTime"/></div>
-							<div class="hourhh"><span>分钟</span></div>
-							<div class="halfInput"><input  type="text" value="" name="calories"/></div>
-							<div class="hourhh"><span>千卡路里</span></div>
-						</div>
-						<div class="kindofsport"><p>运动标签 <strong>(请输入本次健身的标签名，用#隔开。如:  #夜跑#南大#南大跑协)</strong></p></div>
-						<input type="text" value="" name="label"/>
-						<input type="submit" value="发送">
+		</div>
+		<div class="form-group">
+			<label for="exerciseTime" class="col-md-3 control-label">健身时长</label>
+			<div class="col-md-9">
+				<input type="text" class="form-control" name="exerciseTime" id="exerciseTime" placeholder="请输入整数">
+			</div>
+		</div>
 
-					</div>
-					<div class="col-md-6 get-right">
-						<h4>说点什么吧！（有多难？心情怎么样？有没有感受到提升？）</h4>
-						<textarea  name="description" id="description" onblur="checkDescription()"/></textarea>
-						<div class="clearfix" ></div>
-						<span id="description_msg" class="remind_msg"></span>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+		<div class="form-group">
+			<label for="calories" class="col-md-3 control-label">消耗卡路里</label>
+			<div class="col-md-9">
+				<input type="text" class="form-control" name="calories" id="calories" placeholder="请输入整数">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="label" class="col-md-3 control-label">运动标签</label>
+			<div class="col-md-9">
+				<input type="text" name="label" class="form-control" placeholder="请输入本次健身的标签名，用#隔开。如:  #夜跑#南大#南大跑协"/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="description" class="col-md-3 control-label">说点什么</label>
+			<div class="col-md-9">
+				<textarea maxlength="140" name="description" class="form-control" rows="4" id="description" onblur="checkDescription()" placeholder="说点什么吧！（有多难？心情怎么样？有没有感受到提升？）"/></textarea>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-6 col-md-3">
+				<input type="submit" class="btn btn-success col-sm-offset-2 col-sm-8" value="发送">
+			</div>
+		</div>
+
 				<script type="text/javascript">
 					$(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 				</script>
@@ -174,8 +185,7 @@
 					});
 				</script>
 			</div>
-		</div>
 	</form>
-
+	</div>
 	<!--get touch end here-->
 @endsection
